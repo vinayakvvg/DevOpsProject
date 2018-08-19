@@ -13,12 +13,12 @@ public class App extends HttpServlet {
 	
 	public String calculateSum(String a, String b) 
 	{	
-		int x,y;
-		Double ans;
-		ans=0.0;
+		int x,y; 
+		Integer sum;
 		x=Integer.parseInt(a);
 		y=Integer.parseInt(b);
-		return ans.toString();
+		sum=x+y;
+		return sum.toString();
 	}
 
 
