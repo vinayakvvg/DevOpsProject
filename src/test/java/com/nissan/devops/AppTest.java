@@ -1,6 +1,6 @@
 package com.nissan.devops;
 
-import static org.junit.Assert.*;
+import org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import junit.framework.Assert;
@@ -18,7 +18,5 @@ public class AppTest {
 	public void bothIntegerNumbers() {
 		Assert.assertEquals("9", add.calculateSum("2", "7")) ;
 	}
-	
-	
 	
 }
