@@ -10,15 +10,40 @@ public class App extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
     
+	public Boolean isNumber(String num)
+	{
+		Boolean result = true;
+		
+		try{
+			Double.parseDouble(num);
+		}
+		catch(NumberFormatException e){
+			result = false;
+		}
+		return result;
+	}
 	
 	public String calculateSum(String a, String b) 
 	{	
-		int x,y; 
-		Integer sum;
-		x=Integer.parseInt(a);
-		y=Integer.parseInt(b);
-		sum=x+y;
-		return sum.toString();
+		{	
+			if(a.length() == 0){
+				return "Please enter number 1";
+			}
+			if(!isNumber(a)){
+				return "Please enter integer or floating decimal values only";
+			}
+			if(b.length() == 0){
+				return "Please enter number 2";			
+			}
+			if(!isNumber(b)){
+				return "Please enter integer or floating decimal values only";
+			}
+			Double ans = Double.parseDouble(a) + Double.parseDouble(b);
+			if(ans%1 == 0){
+				return Integer.toString(ans.intValue());
+			}
+			return ans.toString();
+		}
 	}
 
 
